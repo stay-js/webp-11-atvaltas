@@ -28,13 +28,8 @@
           <h1>Átváltó űrlap</h1>
         </div>
 
-        <form>
-          <select
-            class="form-select mb-3"
-            aria-label="Átváltás típusa"
-            name="type"
-            id="type-selector"
-          >
+        <form class="col-12">
+          <select class="form-select mb-3" aria-label="Átváltás típusa" name="type" id="type">
             <option selected>Mit szeretnél átváltani?</option>
             <option value="temperature">Hőmérséklet</option>
             <option value="length">Hossz</option>
@@ -51,8 +46,8 @@
               <select
                 class="form-select"
                 aria-label="Átváltás mértékegysége"
-                name="from-type"
-                id="from-type"
+                name="from-unit"
+                id="from-unit"
               ></select>
             </div>
           </div>
@@ -60,22 +55,22 @@
           <img
             id="switch"
             src="assets/images/arrows.png"
-            class="mx-auto mb-3 d-block"
+            class="d-block mx-auto mb-3"
             style="cursor: pointer"
             alt="Csere"
           />
 
-          <div class="row mb-3">
+          <div class="row">
             <div class="col-6">
-              <input type="number" disabled class="form-control" id="to-value" />
+              <input disabled class="form-control" id="to-value" />
             </div>
 
             <div class="col-6">
               <select
                 class="form-select"
                 aria-label="Átváltás mértékegysége"
-                name="to-type"
-                id="to-type"
+                name="to-unit"
+                id="to-unit"
               ></select>
             </div>
           </div>

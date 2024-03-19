@@ -2,24 +2,24 @@
 
 import { temperature, length, weight, volume } from './constants.js';
 
-const fromType = document.getElementById('from-type');
+const fromUnit = document.getElementById('from-unit');
 const fromValue = document.getElementById('from-value');
-const toType = document.getElementById('to-type');
+const toUnit = document.getElementById('to-unit');
 const toValue = document.getElementById('to-value');
 const switchButton = document.getElementById('switch');
 
 let values;
 
 const convertHandler = () => {
-  const from = values.filter((val) => val.name == fromType.value)[0];
-  const to = values.filter((val) => val.name == toType.value)[0];
+  const from = values.filter((val) => val.name == fromUnit.value)[0];
+  const to = values.filter((val) => val.name == toUnit.value)[0];
 
   toValue.value = to.fromBase(from.toBase(parseFloat(fromValue.value)));
 };
 
-fromType.addEventListener('change', convertHandler);
+fromUnit.addEventListener('change', convertHandler);
 fromValue.addEventListener('input', convertHandler);
-toType.addEventListener('change', convertHandler);
+toUnit.addEventListener('change', convertHandler);
 
 const removeAllChildren = (element) => {
   while (element.firstChild) {
@@ -27,9 +27,9 @@ const removeAllChildren = (element) => {
   }
 };
 
-document.getElementById('type-selector').addEventListener('change', (e) => {
-  removeAllChildren(fromType);
-  removeAllChildren(toType);
+document.getElementById('type').addEventListener('change', (e) => {
+  removeAllChildren(fromUnit);
+  removeAllChildren(toUnit);
 
   switch (e.target.value) {
     case 'temperature':
@@ -51,13 +51,13 @@ document.getElementById('type-selector').addEventListener('change', (e) => {
     option.value = item.name;
     option.textContent = item.name;
 
-    fromType.append(option.cloneNode(true));
-    toType.append(option.cloneNode(true));
+    fromUnit.append(option.cloneNode(true));
+    toUnit.append(option.cloneNode(true));
   });
 });
 
 switchButton.addEventListener('click', () => {
-  [fromType.value, toType.value] = [toType.value, fromType.value];
+  [fromUnit.value, toUnit.value] = [toUnit.value, fromUnit.value];
   [fromValue.value, toValue.value] = [toValue.value, fromValue.value];
 
   switchButton.style.transform =
