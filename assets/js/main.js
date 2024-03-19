@@ -11,8 +11,8 @@ const switchButton = document.getElementById('switch');
 let values;
 
 const convertHandler = () => {
-  const from = values.filter((val) => val.name == fromUnit.value)[0];
-  const to = values.filter((val) => val.name == toUnit.value)[0];
+  const from = values.find((val) => val.name == fromUnit.value);
+  const to = values.find((val) => val.name == toUnit.value);
 
   const value = to.fromBase(from.toBase(parseFloat(fromValue.value)));
   toValue.value = isNaN(value) ? '' : value;
