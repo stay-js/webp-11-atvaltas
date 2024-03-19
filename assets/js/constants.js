@@ -3,8 +3,8 @@
 const defaultUnits = (name) => [
   {
     name: `kilo${name}`,
-    toBase: (value) => value * 1000,
-    fromBase: (value) => value / 1000,
+    toBase: (value) => value * 1_000,
+    fromBase: (value) => value / 1_000,
   },
   {
     name: `hekto${name}`,
@@ -33,8 +33,8 @@ const defaultUnits = (name) => [
   },
   {
     name: `milli${name}`,
-    toBase: (value) => value / 1000,
-    fromBase: (value) => value * 1000,
+    toBase: (value) => value / 1_000,
+    fromBase: (value) => value * 1_000,
   },
 ];
 
@@ -85,8 +85,8 @@ export const length = [
   },
   {
     name: 'mérföld',
-    toBase: (value) => value / 1609.344,
-    fromBase: (value) => value * 1609.344,
+    toBase: (value) => value / 1_609.344,
+    fromBase: (value) => value * 1_609.344,
   },
 ];
 
@@ -94,8 +94,8 @@ export const weight = [
   ...defaultUnits('gramm'),
   {
     name: 'tonna',
-    toBase: (value) => value * 1000_000,
-    fromBase: (value) => value / 1000_000,
+    toBase: (value) => value * 1_000_000,
+    fromBase: (value) => value / 1_000_000,
   },
   {
     name: 'mázsa',
@@ -123,7 +123,7 @@ export const volume = [
   ...defaultUnits('liter'),
   {
     name: 'köbméter',
-    toBase: (value) => value * 1000,
-    fromBase: (value) => value / 1000,
+    toBase: (value) => value * 1_000,
+    fromBase: (value) => value / 1_000,
   },
 ];
