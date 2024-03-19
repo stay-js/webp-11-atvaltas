@@ -55,6 +55,8 @@ document.getElementById('type').addEventListener('change', (e) => {
     fromUnit.append(option.cloneNode(true));
     toUnit.append(option.cloneNode(true));
   });
+
+  convertHandler();
 });
 
 switchButton.addEventListener('click', () => {
