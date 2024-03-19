@@ -14,7 +14,8 @@ const convertHandler = () => {
   const from = values.filter((val) => val.name == fromUnit.value)[0];
   const to = values.filter((val) => val.name == toUnit.value)[0];
 
-  toValue.value = to.fromBase(from.toBase(parseFloat(fromValue.value)));
+  const value = to.fromBase(from.toBase(parseFloat(fromValue.value)));
+  toValue.value = isNaN(value) ? '' : value;
 };
 
 fromUnit.addEventListener('change', convertHandler);
